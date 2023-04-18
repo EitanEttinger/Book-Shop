@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(
+    to right,
+    #dc2430,
+    #7b4397
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  /* background-color: darkslateblue; */
+  color: whitesmoke;
+  overflow-x: hidden;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+button {
+  color: whitesmoke;
+  border: 0;
+  border-radius: 20px;
+  background-color: #4a285b;
+  padding: 6px 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: deeppink;
+}
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-preview {
+  position: relative;
+  background-color: white;
+  color: darkviolet;
+  width: 20%;
+  margin: 0.5em;
+  border: 1px solid lightgray;
+  border-radius: 0.2em;
+  text-align: center;
+  padding: 4px;
+}
+
+.book-preview .btn-remove {
+  display: block;
+  margin-inline: auto;
+  /* margin-block-end: 0px; */
+}
+
+.book-preview img {
+  margin-block-end: 20px;
+  max-width: 100%;
+  height: 44%;
+}
+
+.book-preview h4 {
+  font-size: 1.4em;
+  text-transform: capitalize;
+}
+
+.book-preview h4 span {
+  color: black;
+  font-size: 1.5em;
+}
+
+.book-filter {
+  position: relative;
+  /* top: 40px; */
+
+  background-color: #311b3c;
+  padding: 10px;
+  margin: 20px;
+}
+
+.filter-writer-select {
+  text-transform: capitalize;
+}
+
+.book-filter hr {
+  margin: 30px;
+}
+
+.modal {
+  background-color: #111;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  left: 150%;
+  height: 80vh;
+  min-width: 300px;
+  text-align: center;
+  transition: left 0.5s;
+}
+
+.modal.open {
+  left: 50%;
+}
+
+.modal .modalBookName {
+  color: #623679;
+  text-transform: capitalize;
+}
+
+.modal .modalWriterName {
+  color: #623679;
+  text-transform: capitalize;
+}
+
+.modal h4 span {
+  color: #623679;
+}
+
+.modal > p {
+  text-align: left;
+}
+
+.user-msg {
+  position: fixed;
+  bottom: -100px;
+  right: 10px;
+  background-color: #111;
+  padding: 10px;
+  transition: bottom 0.5s;
+}
+
+.user-msg.open {
+  bottom: 10px;
+}
+
+.highlite {
+  background-color: plum;
+}

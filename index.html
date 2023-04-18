@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="ie=edge"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="css/main.css"
+    />
+    <title>Chai Besefer</title>
+  </head>
+
+  <body onload="onInit()">
+    <h1>Books shop</h1>
+
+    <section class="book-filter">
+      <h2>Filter</h2>
+      <select
+        class="filter-writer-select"
+        onchange="onSetFilterBy({writer: this.value})"
+      >
+        <option value="">Select Writer</option>
+      </select>
+      <label>
+        Min Price:
+        <input
+          type="range"
+          min="0"
+          max="250"
+          value="50"
+          class="filter-price-range"
+          onchange="this.title=this.value;onSetFilterBy({minPrice: this.value})"
+        />
+      </label>
+      <hr />
+      <div>
+        Sort by:
+        <select
+          class="sort-by"
+          onchange="onSetSortBy()"
+        >
+          <option value="">Select Sorting</option>
+          <option value="writer">By Writer</option>
+          <option value="bookPrice">Price</option>
+        </select>
+        <label>
+          Descending
+          <input
+            class="sort-desc"
+            type="checkbox"
+            oninput="onSetSortBy()"
+          />
+        </label>
+      </div>
+    </section>
+
+    <button
+      title="Add Book"
+      onclick="onAddBook()"
+    >
+      Add Book
+    </button>
+
+    <section class="books-container"></section>
+    <button
+      class="next"
+      onclick="onNextPage()"
+    >
+      Next
+    </button>
+    <div class="modal">
+      <h2 class="modalBookName"></h2>
+      <h3 class="modalWriterName"></h3>
+      <h4>Price: <span></span></h4>
+      <h5>Book Description:</h5>
+      <p></p>
+      <button onclick="onNextBook()">next</button>
+      <button onclick="onCloseModal()">Close</button>
+      <button onclick="onPrevBook()">prev</button>
+    </div>
+
+    <div class="user-msg"></div>
+
+    <script src="js/lib/hammer.js"></script>
+    <script src="js/services/util.service.js"></script>
+    <script src="js/services/book.service.js"></script>
+    <script src="js/book.controller.js"></script>
+  </body>
+</html>
